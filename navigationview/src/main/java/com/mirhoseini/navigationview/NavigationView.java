@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
 
-import com.mirhoseini.navigationview.R;
+//import com.mirhoseini.navigationview.R;
 
 public class NavigationView extends View implements SurfaceHolder.Callback {
     final int padding = 10;
@@ -45,25 +45,23 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
     public NavigationView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        TypedArray a = context.obtainStyledAttributes(attrs,
-                R.styleable.NavigationView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NavigationView);
 
         final int N = a.getIndexCount();
         for (int i = 0; i < N; ++i) {
             int attr = a.getIndex(i);
-            switch (attr) {
-                case R.styleable.NavigationView_downButton:
-                    buttonsEnabled[0] = a.getBoolean(attr, false);
-                    break;
-                case R.styleable.NavigationView_leftButton:
-                    buttonsEnabled[1] = a.getBoolean(attr, false);
-                    break;
-                case R.styleable.NavigationView_upButton:
-                    buttonsEnabled[2] = a.getBoolean(attr, false);
-                    break;
-                case R.styleable.NavigationView_rightButton:
-                    buttonsEnabled[3] = a.getBoolean(attr, false);
-                    break;
+            if (attr == R.attr.down_button) {
+                buttonsEnabled[0] = a.getBoolean(attr, false);
+
+            } else if (attr == R.attr.left_button) {
+                buttonsEnabled[1] = a.getBoolean(attr, false);
+
+            } else if (attr == R.attr.up_button) {
+                buttonsEnabled[2] = a.getBoolean(attr, false);
+
+            } else if (attr == R.attr.right_button) {
+                buttonsEnabled[3] = a.getBoolean(attr, false);
+
             }
         }
 
