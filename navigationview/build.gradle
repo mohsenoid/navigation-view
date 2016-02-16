@@ -3,9 +3,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 version = "1.0.0"
-group = "com.mirhoseini"
+group = "com.mirhoseini.navigationview"
 
-def siteUrl = "http://mirhoseini.com"
+def siteUrl = "http://mirhoseini.com/navigation-view/"
 def gitUrl = "https://github.com/mmirhoseini/navigation_view.git"
 
 android {
