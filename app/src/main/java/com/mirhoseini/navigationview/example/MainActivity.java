@@ -1,13 +1,15 @@
-package com.mirhoseini.navigationview;
+package com.mirhoseini.navigationview.example;
 
-import android.graphics.Color;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Toast;
+import com.mirhoseini.navigationview.NavigationView;
+
+import com.mirhoseini.navigationview.example.R;
 
 
-public class MainActivity extends ActionBarActivity implements NavigationView.OnNavigationListener {
+public class MainActivity extends Activity implements NavigationView.OnNavigationListener {
 
     private NavigationView navigationView;
 
