@@ -4,6 +4,17 @@ Naavigation View
 ![Logo](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
 This is a navigation view for Android Applications. It contains 4-direction buttons which can be disabled in different situations.
+
+Layout xml:
+```xml
+<com.mirhoseini.navigationview.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:down_button="false" />
+```  
+
+Code:
 ```java
   navigationView = (NavigationView) findViewById(R.id.navigationView);
 
