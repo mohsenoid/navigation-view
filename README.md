@@ -1,4 +1,4 @@
-Naavigation View
+Navigation View
 ============
 
 ![Logo](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
@@ -48,7 +48,7 @@ or Gradle:
 compile 'com.mirhoseini.navigationview:navigationview:1.0.0'
 ```
 
-![Screenshot](/app/Screenshot.png)
+![Screenshot](/Screenshot.png)
 
 License
 -------
