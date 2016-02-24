@@ -24,3 +24,19 @@ proguard/
 
 # Log Files
 *.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# .idea Folder
+.idea/workspace.xml
+.idea/libraries
+
+# publish Folder
+publish/
+
+# iml files
+*.iml
