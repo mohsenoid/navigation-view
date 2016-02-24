@@ -1,7 +1,7 @@
 Navigation View
 ============
 
-![Logo](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
+![Logo](icon.png)
 
 This is a navigation view for Android Applications. It contains 4-direction buttons which can be disabled in different situations.
 
