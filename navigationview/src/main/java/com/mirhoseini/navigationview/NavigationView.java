@@ -53,10 +53,10 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NavigationView);
 
         try {
-            buttonsEnabled[0] = a.getBoolean(R.styleable.NavigationView_downButton, false);
-            buttonsEnabled[1] = a.getBoolean(R.styleable.NavigationView_leftButton, false);
-            buttonsEnabled[2] = a.getBoolean(R.styleable.NavigationView_upButton, false);
-            buttonsEnabled[3] = a.getBoolean(R.styleable.NavigationView_rightButton, false);
+            buttonsEnabled[0] = a.getBoolean(R.styleable.NavigationView_downButton, true);
+            buttonsEnabled[1] = a.getBoolean(R.styleable.NavigationView_leftButton, true);
+            buttonsEnabled[2] = a.getBoolean(R.styleable.NavigationView_upButton, true);
+            buttonsEnabled[3] = a.getBoolean(R.styleable.NavigationView_rightButton, true);
             arcsPadding = a.getInt(R.styleable.NavigationView_arcsPadding, 20);
             backCirclePadding = a.getInt(R.styleable.NavigationView_backCirclePadding, 40);
             strokeWidth = a.getInt(R.styleable.NavigationView_strokeWidth, 5);

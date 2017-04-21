@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.2"
+version = "1.0.3"
 group = "com.mirhoseini.navigationview"
 
 def siteUrl = "http://mirhoseini.com/navigation-view/"
@@ -14,7 +14,7 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 3
+        versionCode 4
         versionName version
     }
     buildTypes {

@@ -39,13 +39,13 @@ Grab via Maven:
 <dependency>
   <groupId>com.mirhoseini.navigationview</groupId>
   <artifactId>navigationview</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'com.mirhoseini.navigationview:navigationview:1.0.2'
+compile 'com.mirhoseini.navigationview:navigationview:1.0.3'
 ```
 
 ![Screenshot](/Screenshot.png)
