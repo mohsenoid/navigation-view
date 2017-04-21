@@ -2,19 +2,19 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.0"
+version = "1.0.2"
 group = "com.mirhoseini.navigationview"
 
 def siteUrl = "http://mirhoseini.com/navigation-view/"
 def gitUrl = "https://github.com/mmirhoseini/navigation_view.git"
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 23
-        versionCode 1
+        targetSdkVersion 25
+        versionCode 3
         versionName version
     }
     buildTypes {
@@ -22,8 +22,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    productFlavors {
     }
 }
 
@@ -82,6 +80,9 @@ install {
 }
 
 dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:25.3.1'
 }
 
 task sourcesJar(type: Jar) {

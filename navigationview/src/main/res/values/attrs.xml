@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="NavigationView">
-        <attr name="up_button" format="boolean"/>
-        <attr name="down_button" format="boolean"/>
-        <attr name="left_button" format="boolean"/>
-        <attr name="right_button" format="boolean"/>
+        <attr name="upButton" format="boolean"/>
+        <attr name="downButton" format="boolean"/>
+        <attr name="leftButton" format="boolean"/>
+        <attr name="rightButton" format="boolean"/>
+        <attr name="arcsPadding" format="integer"/>
+        <attr name="strokeWidth" format="integer"/>
+        <attr name="backCirclePadding" format="integer"/>
+        <attr name="backCircleVisible" format="boolean"/>
+        <attr name="selectedColor" format="color"/>
     </declare-styleable>
 
 </resources>

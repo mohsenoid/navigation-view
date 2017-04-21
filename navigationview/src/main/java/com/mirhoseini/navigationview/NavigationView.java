@@ -16,19 +16,20 @@ import android.view.View;
 //import com.mirhoseini.navigationview.R;
 
 public class NavigationView extends View implements SurfaceHolder.Callback {
-    final int padding = 10;
-    final int dCenter = 10; // Distance from center
-    final int strokeWidth = 5;
-    final int sweepAngle = 90;
+    static final int sweepAngle = 90;
 
-    final int[] xFactor = {0, 1, 0, -1};
-    final int[] yFactor = {-1, 0, 1, 0};
+    static final int[] xFactor = {0, 1, 0, -1};
+    static final int[] yFactor = {-1, 0, 1, 0};
 
-    final int[] hFactorX1 = {-1, -1, -1, 1};
-    final int[] hFactorX2 = {1, -1, 1, 1};
-    final int[] hFactorY1 = {1, -1, -1, -1};
-    final int[] hFactorY2 = {1, 1, -1, 1};
+    static final int[] hFactorX1 = {-1, -1, -1, 1};
+    static final int[] hFactorX2 = {1, -1, 1, 1};
+    static final int[] hFactorY1 = {1, -1, -1, -1};
+    static final int[] hFactorY2 = {1, 1, -1, 1};
 
+    int arcsPadding = 20;
+    int backCirclePadding = 40;
+    int strokeWidth = 5;
+    boolean backCircleVisible = true;
     boolean[] buttonsEnabled = {true, true, true, true};
     boolean[] buttonsSelected = {false, false, false, false};
     int centerX;
@@ -45,31 +46,31 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
     public NavigationView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NavigationView);
 
-        final int N = a.getIndexCount();
-        for (int i = 0; i < N; ++i) {
-            int attr = a.getIndex(i);
-            if (attr == R.attr.down_button) {
-                buttonsEnabled[0] = a.getBoolean(attr, false);
-
-            } else if (attr == R.attr.left_button) {
-                buttonsEnabled[1] = a.getBoolean(attr, false);
-
-            } else if (attr == R.attr.up_button) {
-                buttonsEnabled[2] = a.getBoolean(attr, false);
-
-            } else if (attr == R.attr.right_button) {
-                buttonsEnabled[3] = a.getBoolean(attr, false);
-
-            }
+        try {
+            buttonsEnabled[0] = a.getBoolean(R.styleable.NavigationView_downButton, false);
+            buttonsEnabled[1] = a.getBoolean(R.styleable.NavigationView_leftButton, false);
+            buttonsEnabled[2] = a.getBoolean(R.styleable.NavigationView_upButton, false);
+            buttonsEnabled[3] = a.getBoolean(R.styleable.NavigationView_rightButton, false);
+            arcsPadding = a.getInt(R.styleable.NavigationView_arcsPadding, 20);
+            backCirclePadding = a.getInt(R.styleable.NavigationView_backCirclePadding, 40);
+            strokeWidth = a.getInt(R.styleable.NavigationView_strokeWidth, 5);
+            backCircleVisible = a.getBoolean(R.styleable.NavigationView_backCircleVisible, true);
+            fillColor = a.getColor(R.styleable.NavigationView_selectedColor, Color.CYAN);
+        } finally {
+            a.recycle();
         }
-
-        a.recycle();
     }
 
     public NavigationView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
+        init(context, attrs);
     }
 
     public void setOnNavigationListener(OnNavigationListener l) {
@@ -137,22 +138,24 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
 
         // Draw Inner Circle
 
-        radiusInner = centerX < centerY ? centerX - dCenter - padding : centerY
-                - dCenter - padding;
-        canvas.drawCircle(centerX, centerY, radiusInner, paintFillWhite);
-        canvas.drawCircle(centerX, centerY, radiusInner, paintStroke);
+        if (backCircleVisible) {
+            radiusInner = centerX < centerY ? centerX - backCirclePadding : centerY
+                    - backCirclePadding;
+            canvas.drawCircle(centerX, centerY, radiusInner, paintFillWhite);
+            canvas.drawCircle(centerX, centerY, radiusInner, paintStroke);
+        }
 
         // Draw Outer Circle Arcs
 
-        radiusOuter = centerX < centerY ? centerX - strokeWidth - padding
-                : centerY - strokeWidth - padding;
+        radiusOuter = centerX < centerY ? centerX - strokeWidth - arcsPadding
+                : centerY - strokeWidth - arcsPadding;
 
         RectF oval = new RectF();
 
         for (int i = 0; i < 4; i++) {
-            oval.set(centerX - radiusOuter - dCenter * xFactor[i], centerY
-                    - radiusOuter - dCenter * yFactor[i], centerX + radiusOuter
-                    - dCenter * xFactor[i], centerY + radiusOuter - dCenter
+            oval.set(centerX - radiusOuter - arcsPadding * xFactor[i], centerY
+                    - radiusOuter - arcsPadding * yFactor[i], centerX + radiusOuter
+                    - arcsPadding * xFactor[i], centerY + radiusOuter - arcsPadding
                     * yFactor[i]);
 
             int startAngle = i * 90 + 45;

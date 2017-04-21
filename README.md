@@ -11,7 +11,7 @@ Layout xml:
         android:id="@+id/navigationView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:down_button="false" />
+        app:downButton="false" />
 ```  
 
 Code:
@@ -39,13 +39,13 @@ Grab via Maven:
 <dependency>
   <groupId>com.mirhoseini.navigationview</groupId>
   <artifactId>navigationview</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'com.mirhoseini.navigationview:navigationview:1.0.0'
+compile 'com.mirhoseini.navigationview:navigationview:1.0.2'
 ```
 
 ![Screenshot](/Screenshot.png)
