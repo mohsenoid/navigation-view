@@ -15,6 +15,6 @@
         android:id="@+id/navigationView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:backCircleVisible="false"
-        app:downButton="false"/>
+        app:navBackCircleVisible="false"
+        app:navDownButton="false"/>
 </LinearLayout>
