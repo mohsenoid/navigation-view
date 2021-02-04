@@ -39,13 +39,13 @@ Grab via Maven:
 <dependency>
   <groupId>com.mohsenoid.navigationview</groupId>
   <artifactId>navigationview</artifactId>
-  <version>1.0.3</version>
+  <version>1.1.3</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'com.mohsenoid.navigation-view:navigationview:1.0.3'
+compile 'com.mohsenoid.navigationview:navigationview:1.1.3'
 ```
 
 ![Screenshot](/Screenshot.png)
