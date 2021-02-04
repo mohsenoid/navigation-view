@@ -7,7 +7,7 @@ This is a navigation view for Android Applications. It contains 4-direction butt
 
 Layout xml:
 ```xml
-<com.mirhoseini.navigationview.NavigationView
+<com.mohsenoid.navigationview.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -37,7 +37,7 @@ USAGE
 Grab via Maven:
 ```xml
 <dependency>
-  <groupId>com.mirhoseini.navigationview</groupId>
+  <groupId>com.mohsenoid.navigationview</groupId>
   <artifactId>navigationview</artifactId>
   <version>1.0.3</version>
   <type>pom</type>
@@ -45,7 +45,7 @@ Grab via Maven:
 ```
 or Gradle:
 ```groovy
-compile 'com.mirhoseini.navigationview:navigationview:1.0.3'
+compile 'com.mohsenoid.navigation-view:navigationview:1.0.3'
 ```
 
 ![Screenshot](/Screenshot.png)
@@ -72,9 +72,3 @@ License
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
-
-Designed By: [<b>Mohsen Mirhoseini Argi</b>][1]<br />
-
-Contact me: mohsen@mirhoseini.com
-
-[1]: http://www.mirhoseini.com

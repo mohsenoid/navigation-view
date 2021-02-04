@@ -2,15 +2,15 @@
 <resources>
 
     <declare-styleable name="NavigationView">
-        <attr name="navUpButton" format="boolean"/>
-        <attr name="navDownButton" format="boolean"/>
-        <attr name="navLeftButton" format="boolean"/>
-        <attr name="navRightButton" format="boolean"/>
-        <attr name="navArcsPadding" format="integer"/>
-        <attr name="navStrokeWidth" format="integer"/>
-        <attr name="navBackCirclePadding" format="integer"/>
-        <attr name="navBackCircleVisible" format="boolean"/>
-        <attr name="navSelectedColor" format="color"/>
+        <attr name="navUpButton" format="boolean" />
+        <attr name="navDownButton" format="boolean" />
+        <attr name="navLeftButton" format="boolean" />
+        <attr name="navRightButton" format="boolean" />
+        <attr name="navArcsPadding" format="integer" />
+        <attr name="navStrokeWidth" format="integer" />
+        <attr name="navBackCirclePadding" format="integer" />
+        <attr name="navBackCircleVisible" format="boolean" />
+        <attr name="navSelectedColor" format="color" />
     </declare-styleable>
 
 </resources>

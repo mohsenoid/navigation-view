@@ -1,4 +1,4 @@
-package com.mirhoseini.navigationview;
+package com.mohsenoid.navigationview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
-
-//import com.mirhoseini.navigationview.R;
 
 public class NavigationView extends View implements SurfaceHolder.Callback {
     static final int sweepAngle = 90;
@@ -49,6 +47,12 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
         init(context, attrs);
     }
 
+    public NavigationView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+
+        init(context, attrs);
+    }
+
     private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NavigationView);
 
@@ -65,12 +69,6 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
         } finally {
             a.recycle();
         }
-    }
-
-    public NavigationView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-
-        init(context, attrs);
     }
 
     public void setOnNavigationListener(OnNavigationListener l) {
@@ -106,8 +104,8 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
     @Override
     public void onDraw(Canvas canvas) {
 
-        centerX = (int) (getWidth() / 2);
-        centerY = (int) (getHeight() / 2);
+        centerX = getWidth() / 2;
+        centerY = getHeight() / 2;
 
         Paint paintFillWhite = new Paint();
         paintFillWhite.setColor(Color.WHITE);
@@ -311,13 +309,13 @@ public class NavigationView extends View implements SurfaceHolder.Callback {
 
     public interface OnNavigationListener {
 
-        public void onDownClick(View v);
+        void onDownClick(View v);
 
-        public void onLeftClick(View v);
+        void onLeftClick(View v);
 
-        public void onUpClick(View v);
+        void onUpClick(View v);
 
-        public void onRightClick(View v);
+        void onRightClick(View v);
 
     }
 }

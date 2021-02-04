@@ -1,13 +1,11 @@
-package com.mirhoseini.navigationview.example;
+package com.mohsenoid.navigationview.example;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-import com.mirhoseini.navigationview.NavigationView;
 
-import com.mirhoseini.navigationview.example.R;
-
+import com.mohsenoid.navigationview.NavigationView;
 
 public class MainActivity extends Activity implements NavigationView.OnNavigationListener {
 
@@ -18,7 +16,7 @@ public class MainActivity extends Activity implements NavigationView.OnNavigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        navigationView = (NavigationView) findViewById(R.id.navigationView);
+        navigationView = findViewById(R.id.navigationView);
 
         // set navigation disabled color
         // navigationView.setFillDisabledColor(Color.BLUE);

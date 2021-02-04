@@ -3,19 +3,19 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 version = "1.1.2"
-group = "com.mirhoseini.navigationview"
+group = "com.mohsenoid.navigation-view"
 
-def siteUrl = "http://mirhoseini.com/navigation-view/"
-def gitUrl = "https://github.com/mmirhoseini/navigation_view.git"
+def siteUrl = "http://mohsenoid.com/navigation-view/"
+def gitUrl = "https://github.com/mohsenoid/navigation-view.git"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 30
+
     resourcePrefix "nav"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 6
         versionName version
     }
@@ -27,12 +27,9 @@ android {
     }
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = "$System.env.BINTRAY_USER"
+    key = "$System.env.BINTRAY_APIKEY"
 
     configurations = ['archives']
     pkg {
@@ -40,7 +37,7 @@ bintray {
         name = "navigation-view"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
-        licenses = ["MIT"]
+        licenses = ["Apache-2.0"]
         publish = true
     }
 }
@@ -59,36 +56,30 @@ install {
                 // Set your license
                 licenses {
                     license {
-                        name 'The MIT License (MIT)'
-                        url 'https://opensource.org/licenses/MIT'
+                        name 'Apache License, Version 2.0'
+                        url 'https://opensource.org/licenses/Apache-2.0'
                     }
                 }
                 developers {
                     developer {
-                        id 'mmirhoseini'
-                        name 'Mohsen Mirhoseini Argi'
-                        email 'msn.mirhoseini@gmail.com'
+                        id 'mohsenoid'
+                        name 'Mohsen Mirhoseini'
+                        email 'contact@mohsenoid.com'
                     }
                 }
                 scm {
                     connection gitUrl
                     developerConnection gitUrl
                     url siteUrl
-
                 }
             }
         }
     }
 }
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-}
-
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier.set('sources')
 }
 
 task javadoc(type: Javadoc) {
@@ -97,8 +88,8 @@ task javadoc(type: Javadoc) {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
     from javadoc.destinationDir
+    archiveClassifier.set('javadoc')
 }
 
 artifacts {
@@ -106,6 +97,5 @@ artifacts {
     archives sourcesJar
 }
 
-task findConventions << {
-    println project.getConvention()
+dependencies {
 }
