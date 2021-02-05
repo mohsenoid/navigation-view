@@ -37,15 +37,15 @@ USAGE
 Grab via Maven:
 ```xml
 <dependency>
-  <groupId>com.mohsenoid.navigationview</groupId>
-  <artifactId>navigationview</artifactId>
+  <groupId>com.mohsenoid.navigation-view</groupId>
+  <artifactId>navigation-view</artifactId>
   <version>1.1.3</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'com.mohsenoid.navigationview:navigationview:1.1.3'
+compile 'com.mohsenoid.navigation-view:navigation-view:1.1.3'
 ```
 
 ![Screenshot](/Screenshot.png)
