@@ -86,3 +86,6 @@ lint/tmp/
 
 # Android Profiling
 *.hprof
+
+# GPG SecretKeyRingFile
+*.gpg
